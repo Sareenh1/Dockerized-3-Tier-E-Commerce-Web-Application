@@ -1,0 +1,5 @@
+# Build the Docker image
+docker build -t frontend-app .
+
+# Run the container
+docker run -d -p 80:80 frontend-app
