@@ -1,5 +1,0 @@
-CREATE DATABASE myappdb;
-CREATE USER 'myappuser'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON myappdb.* TO 'myappuser'@'%';
-FLUSH PRIVILEGES;
-EXIT;
