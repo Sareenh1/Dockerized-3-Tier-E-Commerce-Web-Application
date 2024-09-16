@@ -1,0 +1,25 @@
+version: '3'
+services:
+  backend:
+    image: node:16
+    container_name: ecommerce-backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    environment:
+      DB_HOST: 172.31.68.43
+      DB_USER: ecommerce_user
+      DB_PASS: ecommerce_pass
+      DB_NAME: ecommerce_db
+    ports:
+      - "5000:5000"
+    command: bash -c "cd /app && npm install && npm run start"
+
+  frontend:
+    image: nginx:alpine
+    container_name: ecommerce-frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    ports:
+      - "80:80"
+
